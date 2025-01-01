@@ -84,10 +84,7 @@ function minusOne() {
 }
 
 function checkWinner() {
-    if (you == opponent) {
-        return; //nobody gets a point
-    }
-    else {
+    if (you != opponent) {
         if (you == "rock") {
             if (opponent == "scissors") {
                 yourScore += 1;
