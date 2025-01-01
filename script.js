@@ -72,10 +72,10 @@ function minusOne() {
 
         //assign final value to you and opponent
         for (let i = 0; i < choices.length; i++) {
-            if (this.src.includes(choices[i])) {
+            if (getImgName(this).includes(choices[i])) {
                 you = choices[i];
             }
-            if (opponentChoice.src.includes(choices[i])) {
+            if (getImgName(opponentChoice).includes(choices[i])) {
                 opponent = choices[i]; 
             }
         }
@@ -129,4 +129,9 @@ function clearChoices() {
     yourChoice1.hidden = false;
     document.getElementById("choices").hidden = false;
     instruction.innerText = "Rock Paper Scissors!";
+}
+
+function getImgName(img) {
+    let imgSrcArray = img.src.split("/");
+    return imgSrcArray[imgSrcArray.length - 1];
 }
